@@ -1,0 +1,110 @@
+<div class="confirmation-page">
+  @if (booking) {
+    <div class="success-banner" [class.error-banner]="booking.booking_status === 'BOOKING_FAILED'" [class.warning-banner]="booking.booking_status === 'UNKNOWN'">
+      <div class="success-icon">
+        {{ booking.booking_status === 'BOOKING_CONFIRMED' ? '✔' : (booking.booking_status === 'UNKNOWN' ? '⌛' : '❌') }}
+      </div>
+      <h1>
+        {{ booking.booking_status === 'BOOKING_CONFIRMED' ? 'Booking Confirmed!' : 
+           (booking.booking_status === 'UNKNOWN' ? 'Booking Pending' : 'Booking Failed') }}
+      </h1>
+      <p>
+        {{ booking.booking_status === 'BOOKING_CONFIRMED' ? 'Your booking has been successfully processed.' : 
+           (booking.booking_status === 'UNKNOWN' ? 'We are waiting for supplier confirmation. Please check back later.' : 'The supplier rejected the booking. A refund has been initiated.') }}
+      </p>
+    </div>
+
+    @if (booking.tixxgo_ref) {
+      <div class="ref-card card">
+        <p class="ref-label">Tixxgo Booking Reference</p>
+        <p class="ref-number">{{ booking.tixxgo_ref }}</p>
+      </div>
+    }
+
+    <div class="details-grid">
+      <div class="card detail-card">
+        <h2>Flight Details</h2>
+        <div class="detail-row">
+          <span class="label">Airline</span>
+          <span class="value">{{ booking.airline ?? flight?.airline }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Flight No.</span>
+          <span class="value">{{ booking.flightNumber ?? flight?.flightNumber }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Route</span>
+          <span class="value">{{ booking.origin ?? flight?.origin }} → {{ booking.destination ?? flight?.destination }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Departure</span>
+          <span class="value">{{ (booking.departureTime ?? flight?.departureTime) | date:'dd MMM yyyy, HH:mm' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Arrival</span>
+          <span class="value">{{ (booking.arrivalTime ?? flight?.arrivalTime) | date:'dd MMM yyyy, HH:mm' }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Baggage</span>
+          <span class="value">{{ booking.baggage ?? flight?.baggage }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Refundable</span>
+          <span class="value">
+            @if (booking.refundable ?? flight?.refundable) {
+              <span class="badge badge-success">Yes</span>
+            } @else {
+              <span class="badge badge-danger">No</span>
+            }
+          </span>
+        </div>
+      </div>
+
+      <div class="card detail-card">
+        <h2>Traveller</h2>
+        @if (traveller) {
+          <div class="detail-row">
+            <span class="label">Name</span>
+            <span class="value">{{ traveller.firstName }} {{ traveller.lastName }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="label">Email</span>
+            <span class="value">{{ traveller.email }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="label">Phone</span>
+            <span class="value">{{ traveller.phone }}</span>
+          </div>
+        }
+
+        <h2 class="section-title">Status</h2>
+        <div class="detail-row">
+          <span class="label">Payment</span>
+          <span class="badge" [class.badge-success]="booking.payment_status === 'PAYMENT_SUCCESS'" [class.badge-danger]="booking.payment_status === 'PAYMENT_FAILED'" [class.badge-warning]="booking.payment_status === 'REFUND_PENDING'">{{ booking.payment_status }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Booking</span>
+          <span class="badge" [class.badge-success]="booking.booking_status === 'BOOKING_CONFIRMED'" [class.badge-danger]="booking.booking_status === 'BOOKING_FAILED'" [class.badge-warning]="booking.booking_status === 'UNKNOWN'">{{ booking.booking_status }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Ticketing</span>
+          <span class="badge" [class.badge-success]="booking.ticketing_status === 'ISSUED'">{{ booking.ticketing_status }}</span>
+        </div>
+        <div class="detail-row">
+          <span class="label">Total Paid</span>
+          <span class="value total-paid">₹{{ booking.customerTotal | number }}</span>
+        </div>
+
+        @if (booking.refundable ?? flight?.refundable) {
+          <div class="refund-note">
+            ℹ This ticket is refundable. Cancellation charges may apply.
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" type="button" (click)="bookAnother()">Book Another Flight</button>
+    </div>
+  }
+</div>

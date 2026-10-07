@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: tixxgo-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_pass
+      MYSQL_DATABASE: tixxgo
+      MYSQL_USER: tixxgo
+      MYSQL_PASSWORD: tixxgo_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - tixxgo-db-data:/var/lib/mysql
+      - ./backend/db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./backend/db/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "tixxgo", "-ptixxgo_pass"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: tixxgo-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: tixxgo
+      DB_PASSWORD: tixxgo_pass
+      DB_NAME: tixxgo
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend/logs:/app/logs
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: tixxgo-frontend
+    restart: unless-stopped
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
+volumes:
+  tixxgo-db-data:

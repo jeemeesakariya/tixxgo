@@ -1,0 +1,194 @@
+.flight-card {
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.card-main {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 1.25rem;
+  cursor: pointer;
+  padding: 1.25rem;
+
+  &:hover {
+    background: #f8f9fa;
+  }
+}
+
+.airline-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 64px;
+}
+
+.airline-badge {
+  background: var(--primary);
+  color: white;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.flight-number {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.route {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.route-point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .time {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .airport {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .date-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  &.end {
+    align-items: flex-end;
+  }
+}
+
+.route-middle {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+
+  .duration {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .stops {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+}
+
+.route-line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+
+  .line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .arrow {
+    font-size: 0.9rem;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: center;
+
+  .baggage-badge {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+}
+
+.price-section {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.total-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.expand-btn {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.price-breakdown {
+  border-top: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+  background: #f8f9fa;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  padding: 0.3rem 0;
+  color: var(--text-muted);
+
+  &.discount span:last-child {
+    color: var(--success);
+  }
+
+  &.total-row {
+    border-top: 1px solid var(--border);
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    font-weight: 700;
+    color: var(--text);
+    font-size: 1rem;
+  }
+}
+
+.card-footer {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .card-main {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .route {
+    justify-content: space-between;
+  }
+}

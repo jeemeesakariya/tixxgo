@@ -1,0 +1,182 @@
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T18:17:58.475Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T18:17:58.493Z"}
+{"error":"connect ECONNREFUSED 172.18.0.2:3306","level":"error","message":"Reconciliation: failed to fetch unknown bookings","timestamp":"2026-10-07T18:18:00.494Z"}
+{"error":"connect ECONNREFUSED 172.18.0.2:3306","level":"error","message":"MySQL connection failed","timestamp":"2026-10-07T18:18:00.800Z"}
+{"durationMs":217,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:18:49.994Z","url":"/api/flights/search"}
+{"durationMs":202,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:18:51.951Z","url":"/api/flights/search"}
+{"durationMs":203,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:18:58.189Z","url":"/api/flights/search"}
+{"error":"Table 'tixxgo.bookings' doesn't exist","level":"error","message":"Reconciliation: failed to fetch unknown bookings","timestamp":"2026-10-07T18:19:00.633Z"}
+{"error":"Table 'tixxgo.bookings' doesn't exist","level":"error","message":"Reconciliation: failed to fetch unknown bookings","timestamp":"2026-10-07T18:20:00.706Z"}
+{"error":"Table 'tixxgo.bookings' doesn't exist","level":"error","message":"Reconciliation: failed to fetch unknown bookings","timestamp":"2026-10-07T18:21:00.765Z"}
+{"durationMs":213,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:21:56.996Z","url":"/api/flights/search"}
+{"error":"Table 'tixxgo.bookings' doesn't exist","level":"error","message":"Reconciliation: failed to fetch unknown bookings","timestamp":"2026-10-07T18:22:00.832Z"}
+{"durationMs":204,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:22:08.406Z","url":"/api/flights/search"}
+{"durationMs":156,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:22:08.589Z","url":"/api/flights/revalidate"}
+{"durationMs":202,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:22:18.231Z","url":"/api/flights/search"}
+{"level":"error","message":"Unhandled error Table 'tixxgo.bookings' doesn't exist","method":"POST","stack":"Error: Table 'tixxgo.bookings' doesn't exist\n    at Object.findByIdempotencyKey (/app/src/models/booking.model.js:53:29)\n    at initiateBooking (/app/src/services/bookingService.js:29:39)\n    at /app/src/routes/bookingRoutes.js:35:26\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/app/node_modules/express/lib/router/route.js:149:13)\n    at /app/src/middleware/validate.js:16:5\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/app/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)","timestamp":"2026-10-07T18:22:18.284Z","url":"/api/bookings/initiate"}
+{"durationMs":26,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:22:18.286Z","url":"/api/bookings/initiate"}
+{"durationMs":204,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:23:04.259Z","url":"/api/flights/search"}
+{"durationMs":240,"level":"info","message":"HTTP request","method":"POST","status":201,"timestamp":"2026-10-07T18:23:04.533Z","url":"/api/bookings/initiate"}
+{"durationMs":270,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:23:13.150Z","url":"/api/bookings/1/confirm"}
+{"durationMs":8,"level":"info","message":"HTTP request","method":"GET","status":404,"timestamp":"2026-10-07T18:24:08.275Z","url":"/"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T18:25:51.521Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T18:25:55.635Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T18:25:55.644Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T18:25:55.695Z"}
+{"durationMs":211,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:26:51.422Z","url":"/api/flights/search"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T18:27:36.890Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T18:35:21.444Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T18:35:21.456Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T18:35:21.520Z"}
+{"durationMs":211,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:35:23.287Z","url":"/api/flights/search"}
+{"durationMs":2,"level":"info","message":"HTTP request","method":"POST","status":400,"timestamp":"2026-10-07T18:35:33.695Z","url":"/api/flights/revalidate"}
+{"durationMs":1,"level":"info","message":"HTTP request","method":"POST","status":400,"timestamp":"2026-10-07T18:35:53.034Z","url":"/api/flights/revalidate"}
+{"durationMs":152,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:36:18.486Z","url":"/api/flights/revalidate"}
+{"durationMs":4,"level":"info","message":"HTTP request","method":"POST","status":400,"timestamp":"2026-10-07T18:36:24.920Z","url":"/api/bookings/initiate"}
+{"durationMs":157,"level":"info","message":"HTTP request","method":"POST","status":202,"timestamp":"2026-10-07T18:36:36.830Z","url":"/api/bookings/initiate"}
+{"level":"error","message":"Unhandled error Cannot confirm booking in status: BOOKING_CONFIRMED","method":"POST","stack":"Error: Cannot confirm booking in status: BOOKING_CONFIRMED\n    at confirmBooking (/app/src/services/bookingService.js:86:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T18:36:44.454Z","url":"/api/bookings/1/confirm"}
+{"durationMs":13,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:36:44.457Z","url":"/api/bookings/1/confirm"}
+{"level":"error","message":"Unhandled error Cannot confirm booking in status: BOOKING_CONFIRMED","method":"POST","stack":"Error: Cannot confirm booking in status: BOOKING_CONFIRMED\n    at confirmBooking (/app/src/services/bookingService.js:86:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T18:36:51.922Z","url":"/api/bookings/1/confirm"}
+{"durationMs":4,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:36:51.923Z","url":"/api/bookings/1/confirm"}
+{"durationMs":23,"level":"info","message":"HTTP request","method":"GET","status":200,"timestamp":"2026-10-07T18:37:01.091Z","url":"/api/bookings/1"}
+{"level":"error","message":"Unhandled error Cannot confirm booking in status: BOOKING_CONFIRMED","method":"POST","stack":"Error: Cannot confirm booking in status: BOOKING_CONFIRMED\n    at confirmBooking (/app/src/services/bookingService.js:86:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T18:37:12.572Z","url":"/api/bookings/1/confirm"}
+{"durationMs":3,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:37:12.573Z","url":"/api/bookings/1/confirm"}
+{"durationMs":3,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:37:21.355Z","url":"/api/bookings/1/cancel/preview"}
+{"durationMs":125,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:37:30.429Z","url":"/api/bookings/1/cancel"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T18:38:42.836Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T18:38:42.844Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T18:38:42.881Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T18:39:11.859Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T18:39:32.202Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T18:39:32.207Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T18:39:32.246Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T18:39:57.346Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T18:40:00.852Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T18:40:00.859Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T18:40:00.898Z"}
+{"durationMs":210,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:40:28.531Z","url":"/api/flights/search"}
+{"durationMs":202,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:40:38.801Z","url":"/api/flights/search"}
+{"durationMs":151,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:40:45.724Z","url":"/api/flights/revalidate"}
+{"durationMs":162,"level":"info","message":"HTTP request","method":"POST","status":202,"timestamp":"2026-10-07T18:41:07.067Z","url":"/api/bookings/initiate"}
+{"level":"error","message":"Unhandled error Booking not found: NaN","method":"POST","stack":"Error: Booking not found: NaN\n    at confirmBooking (/app/src/services/bookingService.js:82:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T18:41:14.120Z","url":"/api/bookings/undefined/confirm"}
+{"durationMs":11,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:41:14.122Z","url":"/api/bookings/undefined/confirm"}
+{"level":"error","message":"Unhandled error Booking not found: NaN","method":"POST","stack":"Error: Booking not found: NaN\n    at confirmBooking (/app/src/services/bookingService.js:82:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T18:41:58.881Z","url":"/api/bookings/undefined/confirm"}
+{"durationMs":37,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:41:58.889Z","url":"/api/bookings/undefined/confirm"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T18:43:56.629Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T18:45:52.352Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T18:45:52.366Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T18:45:52.454Z"}
+{"durationMs":211,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:45:58.936Z","url":"/api/flights/search"}
+{"level":"error","message":"Unhandled error Result not found or expired: e7c4f9fc-1b3a-4d98-937b-a35ef09b09b9","method":"POST","stack":"Error: Result not found or expired: e7c4f9fc-1b3a-4d98-937b-a35ef09b09b9\n    at getCachedEntry (/app/src/services/flightSearchService.js:63:11)\n    at revalidateFare (/app/src/services/revalidationService.js:8:17)\n    at /app/src/routes/flightRoutes.js:35:26\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/app/node_modules/express/lib/router/route.js:149:13)\n    at /app/src/middleware/validate.js:16:5\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/app/node_modules/express/lib/router/route.js:149:13)\n    at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)","timestamp":"2026-10-07T18:46:15.942Z","url":"/api/flights/revalidate"}
+{"durationMs":4,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:46:15.944Z","url":"/api/flights/revalidate"}
+{"durationMs":171,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:46:46.111Z","url":"/api/flights/revalidate"}
+{"level":"error","message":"Unhandled error Result not found or expired: e7c4f9fc-1b3a-4d98-937b-a35ef09b09b9","method":"POST","stack":"Error: Result not found or expired: e7c4f9fc-1b3a-4d98-937b-a35ef09b09b9\n    at getCachedEntry (/app/src/services/flightSearchService.js:63:11)\n    at revalidateFare (/app/src/services/revalidationService.js:8:17)\n    at initiateBooking (/app/src/services/bookingService.js:35:30)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:35:20","timestamp":"2026-10-07T18:46:57.768Z","url":"/api/bookings/initiate"}
+{"durationMs":56,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:46:57.771Z","url":"/api/bookings/initiate"}
+{"durationMs":255,"level":"info","message":"HTTP request","method":"POST","status":201,"timestamp":"2026-10-07T18:47:08.978Z","url":"/api/bookings/initiate"}
+{"level":"error","message":"Unhandled error Cannot confirm booking in status: CANCELLED","method":"POST","stack":"Error: Cannot confirm booking in status: CANCELLED\n    at confirmBooking (/app/src/services/bookingService.js:83:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T18:47:17.685Z","url":"/api/bookings/1/confirm"}
+{"durationMs":5,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:47:17.686Z","url":"/api/bookings/1/confirm"}
+{"durationMs":10,"level":"info","message":"HTTP request","method":"GET","status":200,"timestamp":"2026-10-07T18:47:22.695Z","url":"/api/bookings/1"}
+{"durationMs":2,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:47:28.221Z","url":"/api/bookings/1/cancel/preview"}
+{"level":"error","message":"Unhandled error Cannot cancel booking in status: CANCELLED","method":"POST","stack":"Error: Cannot cancel booking in status: CANCELLED\n    at cancelBooking (/app/src/services/cancellationService.js:34:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:80:20","timestamp":"2026-10-07T18:47:32.325Z","url":"/api/bookings/1/cancel"}
+{"durationMs":4,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:47:32.327Z","url":"/api/bookings/1/cancel"}
+{"level":"error","message":"Unhandled error Cannot cancel booking in status: CANCELLED","method":"POST","stack":"Error: Cannot cancel booking in status: CANCELLED\n    at cancelBooking (/app/src/services/cancellationService.js:34:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:80:20","timestamp":"2026-10-07T18:47:42.311Z","url":"/api/bookings/1/cancel"}
+{"durationMs":4,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:47:42.313Z","url":"/api/bookings/1/cancel"}
+{"durationMs":206,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:48:02.982Z","url":"/api/flights/search"}
+{"durationMs":204,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:48:41.008Z","url":"/api/flights/search"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T18:52:14.158Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T18:52:16.672Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T18:52:16.680Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T18:52:16.716Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T18:54:38.869Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T18:55:02.953Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T18:55:02.960Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T18:55:02.997Z"}
+{"durationMs":209,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:55:29.157Z","url":"/api/flights/search"}
+{"durationMs":204,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:55:44.986Z","url":"/api/flights/search"}
+{"durationMs":202,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:56:05.151Z","url":"/api/flights/search"}
+{"durationMs":153,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T18:56:20.387Z","url":"/api/flights/revalidate"}
+{"level":"error","message":"Unhandled error Incorrect datetime value: 'Thu Oct 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T14:00:00' for column 'departure_time' at row 1","method":"POST","stack":"Error: Incorrect datetime value: 'Thu Oct 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T14:00:00' for column 'departure_time' at row 1\n    at Object.createBooking (/app/src/models/booking.model.js:6:31)\n    at initiateBooking (/app/src/services/bookingService.js:44:40)\n    at async /app/src/routes/bookingRoutes.js:35:20","timestamp":"2026-10-07T18:56:38.485Z","url":"/api/bookings/initiate"}
+{"durationMs":173,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T18:56:38.486Z","url":"/api/bookings/initiate"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T19:01:30.217Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T19:01:32.727Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T19:01:32.733Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T19:01:32.775Z"}
+{"durationMs":216,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:03:05.793Z","url":"/api/flights/search"}
+{"durationMs":155,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:03:09.173Z","url":"/api/flights/revalidate"}
+{"level":"error","message":"Unhandled error Incorrect datetime value: 'Thu Oct 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T18:00:00' for column 'departure_time' at row 1","method":"POST","stack":"Error: Incorrect datetime value: 'Thu Oct 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T18:00:00' for column 'departure_time' at row 1\n    at Object.createBooking (/app/src/models/booking.model.js:6:31)\n    at initiateBooking (/app/src/services/bookingService.js:44:40)\n    at async /app/src/routes/bookingRoutes.js:35:20","timestamp":"2026-10-07T19:03:25.639Z","url":"/api/bookings/initiate"}
+{"durationMs":182,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:03:25.641Z","url":"/api/bookings/initiate"}
+{"durationMs":153,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:03:44.341Z","url":"/api/flights/revalidate"}
+{"durationMs":151,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:04:07.976Z","url":"/api/flights/revalidate"}
+{"durationMs":203,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:04:16.792Z","url":"/api/flights/search"}
+{"durationMs":202,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:04:24.129Z","url":"/api/flights/search"}
+{"durationMs":152,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:04:28.515Z","url":"/api/flights/revalidate"}
+{"level":"error","message":"Unhandled error Incorrect datetime value: 'Thu Oct 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T10:30:00' for column 'departure_time' at row 1","method":"POST","stack":"Error: Incorrect datetime value: 'Thu Oct 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T10:30:00' for column 'departure_time' at row 1\n    at Object.createBooking (/app/src/models/booking.model.js:6:31)\n    at initiateBooking (/app/src/services/bookingService.js:44:40)\n    at async /app/src/routes/bookingRoutes.js:35:20","timestamp":"2026-10-07T19:04:44.298Z","url":"/api/bookings/initiate"}
+{"durationMs":165,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:04:44.299Z","url":"/api/bookings/initiate"}
+{"level":"error","message":"Unhandled error Incorrect datetime value: 'Thu Oct 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T10:30:00' for column 'departure_time' at row 1","method":"POST","stack":"Error: Incorrect datetime value: 'Thu Oct 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T10:30:00' for column 'departure_time' at row 1\n    at Object.createBooking (/app/src/models/booking.model.js:6:31)\n    at initiateBooking (/app/src/services/bookingService.js:44:40)\n    at async /app/src/routes/bookingRoutes.js:35:20","timestamp":"2026-10-07T19:04:47.171Z","url":"/api/bookings/initiate"}
+{"durationMs":158,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:04:47.173Z","url":"/api/bookings/initiate"}
+{"durationMs":152,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:04:53.239Z","url":"/api/flights/revalidate"}
+{"durationMs":151,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:04:59.498Z","url":"/api/flights/revalidate"}
+{"durationMs":152,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:05:04.902Z","url":"/api/flights/revalidate"}
+{"durationMs":152,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:05:09.420Z","url":"/api/flights/revalidate"}
+{"durationMs":152,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:05:12.337Z","url":"/api/flights/revalidate"}
+{"durationMs":202,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:05:17.858Z","url":"/api/flights/search"}
+{"durationMs":151,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:05:26.138Z","url":"/api/flights/revalidate"}
+{"level":"error","message":"Unhandled error Incorrect datetime value: 'Thu Oct 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T10:30:00' for column 'departure_time' at row 1","method":"POST","stack":"Error: Incorrect datetime value: 'Thu Oct 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T10:30:00' for column 'departure_time' at row 1\n    at Object.createBooking (/app/src/models/booking.model.js:6:31)\n    at initiateBooking (/app/src/services/bookingService.js:44:40)\n    at async /app/src/routes/bookingRoutes.js:35:20","timestamp":"2026-10-07T19:05:35.404Z","url":"/api/bookings/initiate"}
+{"durationMs":156,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:05:35.405Z","url":"/api/bookings/initiate"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T19:08:44.795Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T19:08:46.308Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T19:08:46.313Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T19:08:46.347Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T19:09:52.421Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T19:10:17.764Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T19:10:17.770Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T19:10:17.806Z"}
+{"durationMs":208,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:10:29.766Z","url":"/api/flights/search"}
+{"durationMs":152,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:10:38.343Z","url":"/api/flights/revalidate"}
+{"durationMs":233,"level":"info","message":"HTTP request","method":"POST","status":201,"timestamp":"2026-10-07T19:10:48.552Z","url":"/api/bookings/initiate"}
+{"durationMs":204,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:10:56.081Z","url":"/api/bookings/3/confirm"}
+{"durationMs":204,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:11:21.741Z","url":"/api/flights/search"}
+{"durationMs":154,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:12:12.121Z","url":"/api/flights/revalidate"}
+{"durationMs":22,"level":"info","message":"HTTP request","method":"POST","status":201,"timestamp":"2026-10-07T19:12:25.197Z","url":"/api/bookings/initiate"}
+{"level":"error","message":"Unhandled error Cannot confirm booking in status: CANCELLED","method":"POST","stack":"Error: Cannot confirm booking in status: CANCELLED\n    at confirmBooking (/app/src/services/bookingService.js:83:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T19:12:32.336Z","url":"/api/bookings/1/confirm"}
+{"durationMs":11,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:12:32.338Z","url":"/api/bookings/1/confirm"}
+{"durationMs":16,"level":"info","message":"HTTP request","method":"GET","status":200,"timestamp":"2026-10-07T19:12:38.105Z","url":"/api/bookings/1"}
+{"durationMs":2,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:12:42.332Z","url":"/api/bookings/1/cancel/preview"}
+{"level":"error","message":"Unhandled error Cannot cancel booking in status: CANCELLED","method":"POST","stack":"Error: Cannot cancel booking in status: CANCELLED\n    at cancelBooking (/app/src/services/cancellationService.js:34:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:80:20","timestamp":"2026-10-07T19:12:49.624Z","url":"/api/bookings/1/cancel"}
+{"durationMs":7,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:12:49.625Z","url":"/api/bookings/1/cancel"}
+{"level":"error","message":"Unhandled error Cannot cancel booking in status: INITIATED","method":"POST","stack":"Error: Cannot cancel booking in status: INITIATED\n    at cancelBooking (/app/src/services/cancellationService.js:34:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:80:20","timestamp":"2026-10-07T19:13:12.019Z","url":"/api/bookings/2/cancel"}
+{"durationMs":4,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:13:12.021Z","url":"/api/bookings/2/cancel"}
+{"durationMs":62,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:13:20.481Z","url":"/api/bookings/3/cancel"}
+{"level":"error","message":"Unhandled error Booking not found: 4","method":"POST","stack":"Error: Booking not found: 4\n    at confirmBooking (/app/src/services/bookingService.js:79:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T19:13:51.801Z","url":"/api/bookings/4/confirm"}
+{"durationMs":6,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:13:51.802Z","url":"/api/bookings/4/confirm"}
+{"level":"error","message":"Unhandled error Cannot confirm booking in status: CANCELLED","method":"POST","stack":"Error: Cannot confirm booking in status: CANCELLED\n    at confirmBooking (/app/src/services/bookingService.js:83:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T19:14:01.093Z","url":"/api/bookings/3/confirm"}
+{"durationMs":4,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:14:01.095Z","url":"/api/bookings/3/confirm"}
+{"level":"error","message":"Unhandled error Result not found or expired: 1b021af0-73cf-4e73-9c2b-e501d123b6d7","method":"POST","stack":"Error: Result not found or expired: 1b021af0-73cf-4e73-9c2b-e501d123b6d7\n    at getCachedEntry (/app/src/services/flightSearchService.js:63:11)\n    at revalidateFare (/app/src/services/revalidationService.js:8:17)\n    at confirmBooking (/app/src/services/bookingService.js:86:30)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T19:14:16.882Z","url":"/api/bookings/2/confirm"}
+{"durationMs":6,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:14:16.883Z","url":"/api/bookings/2/confirm"}
+{"level":"error","message":"Unhandled error Cannot confirm booking in status: CANCELLED","method":"POST","stack":"Error: Cannot confirm booking in status: CANCELLED\n    at confirmBooking (/app/src/services/bookingService.js:83:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async /app/src/routes/bookingRoutes.js:44:20","timestamp":"2026-10-07T19:14:24.134Z","url":"/api/bookings/1/confirm"}
+{"durationMs":3,"level":"info","message":"HTTP request","method":"POST","status":500,"timestamp":"2026-10-07T19:14:24.135Z","url":"/api/bookings/1/confirm"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T19:19:36.500Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T19:19:36.507Z"}
+{"error":"getaddrinfo EAI_AGAIN db","level":"error","message":"MySQL connection failed","timestamp":"2026-10-07T19:19:41.464Z"}
+{"error":"getaddrinfo EAI_AGAIN db","level":"error","message":"Reconciliation: failed to fetch unknown bookings","timestamp":"2026-10-07T19:20:05.535Z"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T19:20:14.055Z"}
+{"level":"info","message":"Booking reconciliation job started (every minute)","timestamp":"2026-10-07T19:20:26.326Z"}
+{"level":"info","message":"Tixxgo backend listening on port 3000","timestamp":"2026-10-07T19:20:26.332Z"}
+{"level":"info","message":"MySQL connected to db:3306/tixxgo","timestamp":"2026-10-07T19:20:26.368Z"}
+{"durationMs":209,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:20:33.129Z","url":"/api/flights/search"}
+{"durationMs":201,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:20:45.795Z","url":"/api/flights/search"}
+{"durationMs":201,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:20:52.729Z","url":"/api/flights/search"}
+{"durationMs":201,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:21:04.102Z","url":"/api/flights/search"}
+{"durationMs":152,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:21:09.269Z","url":"/api/flights/revalidate"}
+{"durationMs":211,"level":"info","message":"HTTP request","method":"POST","status":201,"timestamp":"2026-10-07T19:21:19.161Z","url":"/api/bookings/initiate"}
+{"durationMs":207,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:21:20.879Z","url":"/api/bookings/4/confirm"}
+{"durationMs":203,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:21:28.982Z","url":"/api/flights/search"}
+{"durationMs":151,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:21:33.378Z","url":"/api/flights/revalidate"}
+{"durationMs":174,"level":"info","message":"HTTP request","method":"POST","status":201,"timestamp":"2026-10-07T19:21:46.972Z","url":"/api/bookings/initiate"}
+{"durationMs":205,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:21:48.355Z","url":"/api/bookings/5/confirm"}
+{"durationMs":202,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:21:53.783Z","url":"/api/flights/search"}
+{"durationMs":151,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:21:56.241Z","url":"/api/flights/revalidate"}
+{"durationMs":180,"level":"info","message":"HTTP request","method":"POST","status":201,"timestamp":"2026-10-07T19:22:14.053Z","url":"/api/bookings/initiate"}
+{"durationMs":197,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:22:15.492Z","url":"/api/bookings/6/confirm"}
+{"durationMs":202,"level":"info","message":"HTTP request","method":"POST","status":200,"timestamp":"2026-10-07T19:22:28.439Z","url":"/api/flights/search"}
+{"level":"info","message":"SIGTERM received, shutting down gracefully","timestamp":"2026-10-07T19:24:29.188Z"}

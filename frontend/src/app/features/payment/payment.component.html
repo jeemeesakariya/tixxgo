@@ -1,0 +1,86 @@
+<div class="payment-page">
+  <div class="page-header">
+    <h1>Payment</h1>
+    <p>Review your booking and complete payment.</p>
+  </div>
+
+  @if (errorMessage) {
+    <app-error-banner [message]="errorMessage" (dismissed)="errorMessage = ''"></app-error-banner>
+  }
+
+  <div class="payment-layout">
+    <div class="booking-summary card">
+      <h2>Booking Summary</h2>
+      @if (flight) {
+        <div class="summary-row">
+          <span class="label">Flight</span>
+          <span class="value">{{ flight.airline }} {{ flight.flightNumber }}</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Route</span>
+          <span class="value">{{ flight.origin }} → {{ flight.destination }}</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Departure</span>
+          <span class="value">{{ flight.departureTime | date:'dd MMM yyyy, HH:mm' }}</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Arrival</span>
+          <span class="value">{{ flight.arrivalTime | date:'dd MMM yyyy, HH:mm' }}</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Baggage</span>
+          <span class="value">{{ flight.baggage }}</span>
+        </div>
+      }
+      @if (traveller) {
+        <div class="summary-divider"></div>
+        <div class="summary-row">
+          <span class="label">Passenger</span>
+          <span class="value">{{ traveller.firstName }} {{ traveller.lastName }}</span>
+        </div>
+        <div class="summary-row">
+          <span class="label">Email</span>
+          <span class="value">{{ traveller.email }}</span>
+        </div>
+      }
+      <div class="summary-divider"></div>
+      <div class="summary-row total">
+        <span class="label">Total Amount</span>
+        <span class="value total-amount">₹{{ totalAmount | number }}</span>
+      </div>
+    </div>
+
+    <div class="card-payment card">
+      <h2>Card Details</h2>
+      <p class="mock-note">🔒 Secure Payment (Demo Mode)</p>
+
+      <div class="form-group">
+        <label>Card Number</label>
+        <input type="text" value="**** **** **** 4242" readonly class="readonly-field" />
+      </div>
+      <div class="form-group">
+        <label>Card Holder</label>
+        <input type="text" [value]="traveller ? traveller.firstName + ' ' + traveller.lastName : ''" readonly class="readonly-field" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Expiry Date</label>
+          <input type="text" value="12/28" readonly class="readonly-field" />
+        </div>
+        <div class="form-group">
+          <label>CVV</label>
+          <input type="text" value="***" readonly class="readonly-field" />
+        </div>
+      </div>
+
+      @if (processing) {
+        <app-loading-spinner message="Processing payment..."></app-loading-spinner>
+      } @else {
+        <button class="btn btn-primary btn-pay" type="button" (click)="pay()">
+          Pay ₹{{ totalAmount | number }}
+        </button>
+      }
+    </div>
+  </div>
+</div>

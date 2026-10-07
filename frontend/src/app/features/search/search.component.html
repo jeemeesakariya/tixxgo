@@ -1,0 +1,95 @@
+<div class="search-page">
+  <header class="search-header">
+    <div class="logo">✈ Tixxgo</div>
+    <p class="tagline">Find your next flight</p>
+  </header>
+
+  <div class="search-card card">
+    <h2>Search Flights</h2>
+
+    @if (errorMessage) {
+      <app-error-banner [message]="errorMessage" (dismissed)="errorMessage = ''"></app-error-banner>
+    }
+
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="origin">From</label>
+          <input
+            id="origin"
+            type="text"
+            formControlName="origin"
+            maxlength="3"
+            placeholder="AMD"
+            (input)="onOriginInput($event)"
+            [class.invalid]="f['origin'].invalid && f['origin'].touched"
+          />
+          @if (f['origin'].invalid && f['origin'].touched) {
+            <span class="field-error">Enter a valid 3-letter airport code (e.g. AMD)</span>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="destination">To</label>
+          <input
+            id="destination"
+            type="text"
+            formControlName="destination"
+            maxlength="3"
+            placeholder="DEL"
+            (input)="onDestinationInput($event)"
+            [class.invalid]="f['destination'].invalid && f['destination'].touched"
+          />
+          @if (f['destination'].invalid && f['destination'].touched) {
+            <span class="field-error">Enter a valid 3-letter airport code (e.g. DEL)</span>
+          }
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="departureDate">Departure Date</label>
+          <input
+            id="departureDate"
+            type="date"
+            formControlName="departureDate"
+            [class.invalid]="f['departureDate'].invalid && f['departureDate'].touched"
+          />
+          @if (f['departureDate'].invalid && f['departureDate'].touched) {
+            <span class="field-error">Departure date is required</span>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="adults">Passengers</label>
+          <input
+            id="adults"
+            type="number"
+            formControlName="adults"
+            min="1"
+            max="9"
+            [class.invalid]="f['adults'].invalid && f['adults'].touched"
+          />
+          @if (f['adults'].invalid && f['adults'].touched) {
+            <span class="field-error">1 to 9 passengers allowed</span>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="cabinClass">Cabin Class</label>
+          <select id="cabinClass" formControlName="cabinClass">
+            @for (cls of cabinClasses; track cls) {
+              <option [value]="cls">{{ cls }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      @if (loading) {
+        <app-loading-spinner message="Searching flights..."></app-loading-spinner>
+      } @else {
+        <button type="submit" class="btn btn-primary btn-full">Search Flights</button>
+      }
+    </form>
+  </div>
+</div>

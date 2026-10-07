@@ -1,0 +1,199 @@
+{
+  "info": {
+    "name": "Tixxgo API",
+    "description": "API collection for the Tixxgo travel platform backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Flights",
+      "item": [
+        {
+          "name": "Search Flights",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"origin\": \"AMD\",\n  \"destination\": \"DEL\",\n  \"departureDate\": \"2026-10-15\",\n  \"adults\": 1,\n  \"cabinClass\": \"ECONOMY\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/flights/search",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "flights",
+                "search"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Revalidate Fare",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tixxgoResultId\": \"{{tixxgoResultId}}\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/flights/revalidate",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "flights",
+                "revalidate"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "Initiate Booking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tixxgoResultId\": \"{{tixxgoResultId}}\",\n  \"idempotencyKey\": \"test-key-1234\",\n  \"traveller\": {\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"phone\": \"9876543210\",\n    \"dateOfBirth\": \"1990-01-01\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/bookings/initiate",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "bookings",
+                "initiate"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Confirm Booking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"acceptPriceChange\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/bookings/1/confirm",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "bookings",
+                "1",
+                "confirm"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Booking by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/bookings/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "bookings",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cancellation Preview",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/bookings/1/cancel/preview",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "bookings",
+                "1",
+                "cancel",
+                "preview"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute Cancellation",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/bookings/1/cancel",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "bookings",
+                "1",
+                "cancel"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

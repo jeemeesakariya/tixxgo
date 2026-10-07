@@ -1,0 +1,79 @@
+<div class="flight-card card">
+  <div class="card-main" (click)="toggleExpand()">
+    <div class="airline-info">
+      <span class="airline-badge">{{ flight.airline }}</span>
+      <span class="flight-number">{{ flight.flightNumber }}</span>
+    </div>
+
+    <div class="route">
+      <div class="route-point">
+        <span class="time">{{ formatTime(flight.departureTime) }}</span>
+        <span class="airport">{{ flight.origin }}</span>
+        <span class="date-label">{{ formatDate(flight.departureTime) }}</span>
+      </div>
+
+      <div class="route-middle">
+        <span class="duration">{{ formatDuration(flight.duration) }}</span>
+        <div class="route-line">
+          <span class="dot"></span>
+          <span class="line"></span>
+          <span class="arrow">✈</span>
+        </div>
+        <span class="stops">Non-stop</span>
+      </div>
+
+      <div class="route-point end">
+        <span class="time">{{ formatTime(flight.arrivalTime) }}</span>
+        <span class="airport">{{ flight.destination }}</span>
+        <span class="date-label">{{ formatDate(flight.arrivalTime) }}</span>
+      </div>
+    </div>
+
+    <div class="card-meta">
+      <span class="baggage-badge">🧳 {{ flight.baggage }}</span>
+      @if (flight.refundable) {
+        <span class="badge badge-success">Refundable</span>
+      } @else {
+        <span class="badge badge-danger">Non-refundable</span>
+      }
+    </div>
+
+    <div class="price-section">
+      <div class="total-price">₹{{ flight.pricing.customerTotal | number }}</div>
+      <button class="btn-link expand-btn" type="button">
+        {{ expanded ? '▲ Hide breakdown' : '▼ Price details' }}
+      </button>
+    </div>
+  </div>
+
+  @if (expanded) {
+    <div class="price-breakdown">
+      <div class="breakdown-row">
+        <span>Base Fare</span>
+        <span>₹{{ flight.pricing.baseFare | number }}</span>
+      </div>
+      <div class="breakdown-row">
+        <span>Taxes &amp; Fees</span>
+        <span>₹{{ flight.pricing.taxes | number }}</span>
+      </div>
+      <div class="breakdown-row">
+        <span>Service Fee</span>
+        <span>₹{{ flight.pricing.serviceFee | number }}</span>
+      </div>
+      @if (flight.pricing.discount > 0) {
+        <div class="breakdown-row discount">
+          <span>Discount</span>
+          <span>-₹{{ flight.pricing.discount | number }}</span>
+        </div>
+      }
+      <div class="breakdown-row total-row">
+        <span>Total</span>
+        <span>₹{{ flight.pricing.customerTotal | number }}</span>
+      </div>
+    </div>
+  }
+
+  <div class="card-footer">
+    <button class="btn btn-primary" type="button" (click)="selectFlight()">Select Flight</button>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="revalidation-page">
+  <div class="page-header">
+    <h1>Confirming Your Fare</h1>
+    <p>Please wait while we verify the latest price for your selected flight.</p>
+  </div>
+
+  @if (errorMessage) {
+    <app-error-banner [message]="errorMessage" (dismissed)="errorMessage = ''"></app-error-banner>
+  }
+
+  @if (loading) {
+    <app-loading-spinner message="Revalidating fare..."></app-loading-spinner>
+  }
+
+  @if (!loading && result) {
+    @if (result.status === 'PRICE_UNCHANGED') {
+      <div class="card revalidation-card price-ok">
+        <div class="status-icon">✔</div>
+        <h2>Fare Confirmed</h2>
+        <p class="confirmed-price">₹{{ result.pricing.customerTotal | number }}</p>
+        <p class="status-note">The price has not changed. You're good to go!</p>
+        <div class="action-row">
+          <button class="btn btn-primary" type="button" (click)="proceed()">Continue to Traveller Details</button>
+        </div>
+      </div>
+    }
+
+    @if (result.status === 'PRICE_CHANGED') {
+      <div class="card revalidation-card price-changed">
+        <div class="status-icon warning">⚠</div>
+        <h2>Price Has Changed</h2>
+        <div class="price-comparison">
+          <div class="price-item">
+            <span class="label">Original Price</span>
+            <span class="value old-price">₹{{ result.originalTotal | number }}</span>
+          </div>
+          <div class="price-arrow">→</div>
+          <div class="price-item">
+            <span class="label">New Price</span>
+            <span class="value new-price">₹{{ result.newTotal | number }}</span>
+          </div>
+        </div>
+        <div class="price-diff" [class.increase]="result.priceDiff > 0" [class.decrease]="result.priceDiff < 0">
+          {{ result.priceDiff > 0 ? '+' : '' }}₹{{ result.priceDiff | number }} difference
+        </div>
+        <p class="status-note">The fare has changed since you selected this flight. Would you like to accept the new price?</p>
+        <div class="action-row">
+          <button class="btn btn-outline" type="button" (click)="cancel()">Cancel</button>
+          <button class="btn btn-primary" type="button" (click)="proceed()">Accept &amp; Continue</button>
+        </div>
+      </div>
+    }
+  }
+</div>

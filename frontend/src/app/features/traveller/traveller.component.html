@@ -1,0 +1,90 @@
+<div class="traveller-page">
+  <div class="page-header">
+    <h1>Traveller Details</h1>
+    <p>Please enter the passenger information as it appears on the travel document.</p>
+  </div>
+
+  @if (errorMessage) {
+    <app-error-banner [message]="errorMessage" (dismissed)="errorMessage = ''"></app-error-banner>
+  }
+
+  @if (requiresAcceptance) {
+    <div class="info-banner">
+      ℹ The price changed again during booking initiation. The new price will be shown at payment.
+    </div>
+  }
+
+  <div class="card">
+    <form [formGroup]="travellerForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name *</label>
+          <input id="firstName" type="text" formControlName="firstName"
+            [class.invalid]="f['firstName'].invalid && f['firstName'].touched" placeholder="John" />
+          @if (f['firstName'].invalid && f['firstName'].touched) {
+            <span class="field-error">First name is required</span>
+          }
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name *</label>
+          <input id="lastName" type="text" formControlName="lastName"
+            [class.invalid]="f['lastName'].invalid && f['lastName'].touched" placeholder="Doe" />
+          @if (f['lastName'].invalid && f['lastName'].touched) {
+            <span class="field-error">Last name is required</span>
+          }
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input id="email" type="email" formControlName="email"
+            [class.invalid]="f['email'].invalid && f['email'].touched" placeholder="john.doe@example.com" />
+          @if (f['email'].invalid && f['email'].touched) {
+            <span class="field-error">Enter a valid email address</span>
+          }
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input id="phone" type="tel" formControlName="phone"
+            [class.invalid]="f['phone'].invalid && f['phone'].touched" placeholder="9876543210" maxlength="10" />
+          @if (f['phone'].invalid && f['phone'].touched) {
+            <span class="field-error">Enter a valid 10-digit phone number</span>
+          }
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dateOfBirth">Date of Birth *</label>
+          <input id="dateOfBirth" type="date" formControlName="dateOfBirth"
+            [class.invalid]="f['dateOfBirth'].invalid && f['dateOfBirth'].touched" />
+          @if (f['dateOfBirth'].invalid && f['dateOfBirth'].touched) {
+            <span class="field-error">Date of birth is required</span>
+          }
+        </div>
+      </div>
+
+      <div class="section-divider">Optional Information</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="passportNumber">Passport Number</label>
+          <input id="passportNumber" type="text" formControlName="passportNumber" placeholder="A1234567" />
+        </div>
+        <div class="form-group">
+          <label for="nationality">Nationality</label>
+          <input id="nationality" type="text" formControlName="nationality" placeholder="Indian" />
+        </div>
+      </div>
+
+      @if (loading) {
+        <app-loading-spinner message="Initiating booking..."></app-loading-spinner>
+      } @else {
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Continue to Payment</button>
+        </div>
+      }
+    </form>
+  </div>
+</div>

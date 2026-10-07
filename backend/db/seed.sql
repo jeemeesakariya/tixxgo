@@ -1,0 +1,1 @@
+-- No seed data required. Mock flight data is served from the TBO adapter.

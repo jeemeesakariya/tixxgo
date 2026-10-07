@@ -1,0 +1,52 @@
+.traveller-page {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+
+  h1 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+}
+
+.info-banner {
+  background: #e8f0fe;
+  border: 1px solid #4285f4;
+  border-radius: var(--radius);
+  padding: 0.875rem 1rem;
+  color: #1a73e8;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.section-divider {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  margin: 1.25rem 0 1rem;
+}
+
+.form-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 520px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
